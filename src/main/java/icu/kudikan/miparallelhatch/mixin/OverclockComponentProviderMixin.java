@@ -21,7 +21,6 @@ public class OverclockComponentProviderMixin {
             name = "baseRecipeEu"
     )
     private long mi_modifyBaseRecipeEu(long original, @Local(name = "tag") CompoundTag tag) {
-        // 你要的逻辑：原值 * (包含MACHINE_ACTIVE? 对应int值 : 1)
         int multiplier = tag.contains("MachineActiveParallel") ? tag.getInt("MachineActiveParallel") : 1;
         return original * multiplier;
     }

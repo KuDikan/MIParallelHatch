@@ -16,14 +16,7 @@ import icu.kudikan.miparallelhatch.machines.blockentities.hatches.ParallelHatch;
 
 public class MultiblockParallelHatches {
     public static final HatchType PARALLEL_CONTROL = HatchTypes.register(MI.id("parallel_control"), MI.id("parallel_control_hatch"));
-
-    public static final MachineDefinition<ParallelHatch> BRONZE_PARALLEL = registerParallelHatches("Bronze", "bronze", MachineCasings.BRONZE, MiParallelHatchConfig.INSTANCE.bronzeParallelCount.getAsInt());
-    public static final MachineDefinition<ParallelHatch> STEEL_PARALLEL = registerParallelHatches("Steel", "steel", MachineCasings.STEEL, MiParallelHatchConfig.INSTANCE.steelParallelCount.getAsInt());
-    public static final MachineDefinition<ParallelHatch> BASIC_PARALLEL = registerParallelHatches("Basic", "basic", CableTier.LV.casing, MiParallelHatchConfig.INSTANCE.basicParallelCount.getAsInt());
-    public static final MachineDefinition<ParallelHatch> ADVANCED_PARALLEL = registerParallelHatches("Advanced", "advanced", CableTier.MV.casing, MiParallelHatchConfig.INSTANCE.advancedParallelCount.getAsInt());
-    public static final MachineDefinition<ParallelHatch> TURBO_PARALLEL = registerParallelHatches("Turbo", "turbo", CableTier.HV.casing, MiParallelHatchConfig.INSTANCE.turboParallelCount.getAsInt());
-    public static final MachineDefinition<ParallelHatch> HIGHLY_ADVANCED_PARALLEL = registerParallelHatches("Highly Advanced", "highly_advanced", CableTier.EV.casing, MiParallelHatchConfig.INSTANCE.highlyAdvancedParallelCount.getAsInt());
-    public static final MachineDefinition<ParallelHatch> QUANTUM_PARALLEL = registerParallelHatches("Quantum", "quantum", CableTier.SUPERCONDUCTOR.casing, MiParallelHatchConfig.INSTANCE.quantumParallelCount.getAsInt());
+    public static final HatchType PARALLEL_FORBIDDEN = HatchTypes.register(MI.id("forbidden_parallel"), MI.id("forbidden_parallel_control"));
 
     public static MachineDefinition<ParallelHatch> registerParallelHatches(String englishPrefix, String prefix, MachineCasing casing, int parallelCount) {
         String machine = prefix + "_parallel_control_hatch";
@@ -38,7 +31,13 @@ public class MultiblockParallelHatches {
     }
 
     public static void init() {
-
+        final MachineDefinition<ParallelHatch> BRONZE_PARALLEL = registerParallelHatches("Bronze", "bronze", MachineCasings.BRONZE, MiParallelHatchConfig.INSTANCE.bronzeParallelCount.getAsInt());
+        final MachineDefinition<ParallelHatch> STEEL_PARALLEL = registerParallelHatches("Steel", "steel", MachineCasings.STEEL, MiParallelHatchConfig.INSTANCE.steelParallelCount.getAsInt());
+        final MachineDefinition<ParallelHatch> BASIC_PARALLEL = registerParallelHatches("Basic", "basic", CableTier.LV.casing, MiParallelHatchConfig.INSTANCE.basicParallelCount.getAsInt());
+        final MachineDefinition<ParallelHatch> ADVANCED_PARALLEL = registerParallelHatches("Advanced", "advanced", CableTier.MV.casing, MiParallelHatchConfig.INSTANCE.advancedParallelCount.getAsInt());
+        final MachineDefinition<ParallelHatch> TURBO_PARALLEL = registerParallelHatches("Turbo", "turbo", CableTier.HV.casing, MiParallelHatchConfig.INSTANCE.turboParallelCount.getAsInt());
+        final MachineDefinition<ParallelHatch> HIGHLY_ADVANCED_PARALLEL = registerParallelHatches("Highly Advanced", "highly_advanced", CableTier.EV.casing, MiParallelHatchConfig.INSTANCE.highlyAdvancedParallelCount.getAsInt());
+        final MachineDefinition<ParallelHatch> QUANTUM_PARALLEL = registerParallelHatches("Quantum", "quantum", CableTier.SUPERCONDUCTOR.casing, MiParallelHatchConfig.INSTANCE.quantumParallelCount.getAsInt());
     }
 
 }

@@ -42,7 +42,7 @@ public class MiParallelHatchClient {
                     false);
         });
 
-        if (MIStartupConfig.INSTANCE.datagenOnStartup.getAsBoolean()) {
+        if (true) {
             modBus.addListener(AddPackFindersEvent.class, event -> {
                 if (event.getPackType() == PackType.CLIENT_RESOURCES) {
                     RuntimeDataGen.run(DatagenClient::configure, DatagenServer::configure);

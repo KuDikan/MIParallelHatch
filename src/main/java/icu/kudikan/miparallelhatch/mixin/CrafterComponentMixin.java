@@ -248,7 +248,7 @@ public abstract class CrafterComponentMixin implements IParallelCrafterComponent
 
     @Unique
     private double miParallelHatch$getConfiguredExtraEnergyMultiplier() {
-        return MiParallelHatchConfig.INSTANCE.parallelExtraEnergyMultiplier.get();
+        return MiParallelHatchConfig.INSTANCE.parallelExtraEnergyMultiplier.getAsDouble();
     }
 
     @Unique
